@@ -1,0 +1,26 @@
+{
+  "name": "ediary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.2",
+    "file-loader": "^0.11.1",
+    "style-loader": "^0.18.0",
+    "webpack": "^2.5.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
