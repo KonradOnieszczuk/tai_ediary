@@ -44,3 +44,6 @@ gradle-app.setting
 
 # Miscellanous
 /classes/
+
+# Webpack
+node_modules/

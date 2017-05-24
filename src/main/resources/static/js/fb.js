@@ -20,7 +20,7 @@ const LogoutComponent = (props) => (
                 <a className="navbar-brand" href="/">E-pamiętnik logowanie</a>
             </div>
             <ul className="nav navbar-nav">
-                <li className="active"><a href="/calendar">Kalendarz</a></li>
+                <li className="active"><a href="/api/calendar">Kalendarz</a></li>
             </ul>
         </div>
         </nav>

@@ -1,4 +1,4 @@
-package ediary.security;
+package ediary.controller;
 
 import ediary.model.User;
 import ediary.repository.UserRepository;
@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/session")
-public class AuthenticationResource {
+public class SessionController {
 
     @Autowired
     private UserRepository userRepository;
@@ -23,12 +23,12 @@ public class AuthenticationResource {
     public User session(Principal principal) {
         long userId = 0;
         String name = null;
-        User user = new User(userId, name);
+        User user = new User(userId, name, null);
         if (principal != null) {
             String[] userParts = principal.getName().split("\\.");
             userId = Long.parseLong(userParts[0]);
             name = userParts[1];
-            user = new User(userId, name);
+            user = new User(userId, name, null);
             userRepository.save(user);
         }
         return user;

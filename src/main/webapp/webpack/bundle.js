@@ -9589,7 +9589,7 @@ var LogoutComponent = function LogoutComponent(props) {
                         { className: 'active' },
                         _react2.default.createElement(
                             'a',
-                            { href: '/calendar' },
+                            { href: '/api/calendar' },
                             'Kalendarz'
                         )
                     )

@@ -20,7 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/api/**").authenticated()
                 .and()
-                .headers().frameOptions().disable() // for h2
+                .headers().frameOptions().disable()
                 .and()
                 .requestCache()
                 .requestCache(new NullRequestCache())

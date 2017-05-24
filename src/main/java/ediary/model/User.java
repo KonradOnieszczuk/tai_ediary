@@ -1,16 +1,16 @@
 package ediary.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.*;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
@@ -19,29 +19,7 @@ public class User {
     @Column(nullable = false)
     private String name;
 
-    public User(long userId, String name) {
-        this.userId = userId;
-        this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof User) {
-            User u = (User) obj;
-
-            return Objects.equals(userId, u.userId) && Objects.equals(name, u.name);
-        }
-
-        return false;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(userId, name);
-    }
-
-    @Override
-    public String toString() {
-        return "User id: " + this.userId + " Name: " + this.name;
-    }
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.REMOVE)
+    @JsonBackReference
+    private List<DiaryPart> diaryParts = new LinkedList<>();
 }
