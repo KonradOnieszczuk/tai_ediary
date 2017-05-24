@@ -1,8 +1,12 @@
 module.exports = {
-    entry: './src/main/resources/static/js/main.js',
+    entry: {
+        facebook: './src/main/resources/static/js/facebook.js',
+        diary: './src/main/resources/static/js/diary.js'
+        ,
+    },
     output: {
         path: __dirname + '/src/main/webapp/webpack',
-        filename: 'bundle.js'
+        filename: "[name]-bundle.js"
     },
     module: {
         loaders: [

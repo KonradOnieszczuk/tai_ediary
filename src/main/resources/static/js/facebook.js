@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.css';
 
 const LoginComponent = () => (
     <div className="jumbotron text-center">
         <h1>E-pamiętnik</h1>
         <p>Zatrzymaj swoje wspomnienia;)</p>
         <form action="/signin/facebook" method="post">
-            <button type="submit" className="btn btn-default">Login</button>
+            <button type="submit" className="btn btn-default">Zaloguj się przez Facebook'a</button>
         </form>
     </div>
 );
@@ -17,17 +17,17 @@ const LogoutComponent = (props) => (
         <nav className="navbar navbar-default">
         <div className="container-fluid">
             <div className="navbar-header">
-                <a className="navbar-brand" href="/">E-pamiętnik logowanie</a>
+                <a className="navbar-brand" href="/">E-pamiętnik strona główna</a>
             </div>
             <ul className="nav navbar-nav">
-                <li className="active"><a href="/api/calendar">Kalendarz</a></li>
+                <li><a href="/api/diary">Pamiętnik</a></li>
             </ul>
         </div>
         </nav>
     <div className="jumbotron text-center">
             <div>
                 <h1>{props.name}</h1>
-                <button onClick={props.logout} className="btn btn-default">Logout</button>
+                <button onClick={props.logout} className="btn btn-default">Wyloguj się</button>
             </div>
     </div>
     </div>

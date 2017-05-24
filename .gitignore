@@ -47,3 +47,4 @@ gradle-app.setting
 
 # Webpack
 node_modules/
+/src/main/webapp/webpack/
