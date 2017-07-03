@@ -18,8 +18,4 @@ public class User {
 
     @Column(nullable = false)
     private String name;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.REMOVE)
-    @JsonBackReference
-    private List<DiaryPart> diaryParts = new LinkedList<>();
 }

@@ -22,6 +22,6 @@ public class AuthUtil {
         }
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user.getId() + "." + user.getFirstName() + " " + user.getLastName(), null, null);
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        log.info("User {} {} {} connected.", user.getId(), user.getFirstName() + user.getLastName());
+        log.info("User {} {} {} connected.", user.getId(), user.getFirstName() + " " + user.getLastName());
     }
 }

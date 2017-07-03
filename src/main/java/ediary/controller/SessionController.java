@@ -23,12 +23,12 @@ public class SessionController {
     public User session(Principal principal) {
         long userId = 0;
         String name = null;
-        User user = new User(userId, name, null);
+        User user = new User(userId, name);
         if (principal != null) {
             String[] userParts = principal.getName().split("\\.");
             userId = Long.parseLong(userParts[0]);
             name = userParts[1];
-            user = new User(userId, name, null);
+            user = new User(userId, name);
             userRepository.save(user);
         }
         return user;
