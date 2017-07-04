@@ -19,6 +19,8 @@ public class DiaryPart {
     @Id
     private long diaryPartId;
 
+    private String name;
+
     @JsonSerialize(using = LocalDateSerializer.class)
     @Column(nullable = false)
     private LocalDate day;

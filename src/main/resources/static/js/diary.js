@@ -7,7 +7,15 @@ import $ from 'jquery';
 import 'fullcalendar/dist/fullcalendar.css';
 import 'fullcalendar/dist/fullcalendar.js';
 
-import axios from 'axios';
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 8)];
+    }
+    return color;
+}
 
 const Waiting = () => (
     <div>
@@ -63,19 +71,40 @@ class Diary extends React.Component {
         }
     }
     componentWillMount() {
-        axios.get('/api/calendar', {credentials: 'same-origin'}).then(res => {
-            console.log(res.data);
-            let diaryParts = res.data;
+        fetch('/api/calendar', {credentials: 'same-origin'})
+            .then(r => r.json())
+            .then(res => {
+            let diaryParts = res;
             var sourceEvents = [];
             diaryParts.forEach(function(diaryPart) {
-                console.log(diaryPart.content);
+                let start = new Date(diaryPart.day.year, diaryPart.day.monthValue-1, diaryPart.day.dayOfMonth,
+                    diaryPart.startTime.hour,diaryPart.startTime.minute);
+                let end = new Date(diaryPart.day.year, diaryPart.day.monthValue-1, diaryPart.day.dayOfMonth,
+                    diaryPart.endTime.hour,diaryPart.endTime.minute);
+                let name = diaryPart.name;
+
+
+                let startMinutes;
+                let endMinutes;
+                let month;
+                if (diaryPart.startTime.minute === 0)
+                    startMinutes = '00';
+                else startMinutes = diaryPart.startTime.minute;
+                if (diaryPart.endTime.minute === 0)
+                    endMinutes = '00';
+                else endMinutes = diaryPart.endTime.minute;
+                if (diaryPart.day.monthValue < 10)
+                    month = `0${diaryPart.day.monthValue}`;
+                else month = diaryPart.day.monthValue;
                 sourceEvents.push({
-                    title: diaryPart.content,
-                    date: Date.now(),
-                    allDay: true
+                    title: name,
+                    start: start,
+                    end: end,
+                    url: `http://localhost:8080/api/form?name=${name}&day=${diaryPart.day.year}-${month}-${diaryPart.day.dayOfMonth}&startTime=${diaryPart.startTime.hour}:${startMinutes}&endTime=${diaryPart.endTime.hour}:${endMinutes}&content=${diaryPart.content}`,
+                    color: getRandomColor()
                 })
             });
-            this.setState({
+          this.setState({
                 events: this.state.events.concat(sourceEvents)
             })
         });
@@ -117,12 +146,13 @@ class Calendar extends React.Component {
     }
 
     render() {
+
         return (
             <div ref="calendar"></div>
         );
     }
 }
 
-ReactDOM.render(<Diary />, document.getElementById('component'));
+ReactDOM.render(<Diary />, document.getElementById('element'));
 
 

@@ -15,7 +15,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.2",
     "file-loader": "^0.11.1",
-    "fullcalendar":"^3.4.0",
+    "fullcalendar": "^3.4.0",
     "schema-utils": "^0.3.0",
     "style-loader": "^0.18.0",
     "webpack": "^2.5.1"
@@ -26,6 +26,8 @@
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
+    "url-search-params-polyfill": "^2.0.0"
   }
 }

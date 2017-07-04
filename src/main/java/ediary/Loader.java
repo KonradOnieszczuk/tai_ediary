@@ -32,7 +32,7 @@ public class Loader implements ApplicationRunner {
         long dailyPartId = 1L;
         long userId = 1376743902406200L;
         List<DiaryPart> diaryPartList = Arrays.asList(
-                new DiaryPart(dailyPartId, LocalDate.parse("2017-06-27"), LocalTime.parse("9:00", DateTimeFormatter.ofPattern("H:m")), LocalTime.parse("18:00", DateTimeFormatter.ofPattern("H:m")), "Something happened", userId)
+                new DiaryPart(dailyPartId, "niezwykly dzien", LocalDate.parse("2017-06-27"), LocalTime.parse("9:35", DateTimeFormatter.ofPattern("H:m")), LocalTime.parse("18:00", DateTimeFormatter.ofPattern("H:m")), "Something happened", userId)
         );
         diaryPartRepository.save(diaryPartList);
     }

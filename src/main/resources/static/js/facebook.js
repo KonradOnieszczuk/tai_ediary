@@ -43,7 +43,7 @@ class Facebook extends React.Component {
         this.state = {isLogged: null};
     }
 
-    componentDidMount() {
+    componentWillMount() {
         fetch('/api/session', {credentials: 'same-origin'})
             .then(res => res.json())
             .then(session => this.setState({isLogged : session.name}));
