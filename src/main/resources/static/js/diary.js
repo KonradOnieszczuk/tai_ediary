@@ -19,6 +19,9 @@ const Waiting = () => (
                 <ul className="nav navbar-nav">
                     <li className="active"><a href="/api/diary">Pamiętnik</a></li>
                 </ul>
+                <ul className="nav navbar-nav">
+                    <li><a href="/api/form">Dodaj wspomnienie</a></li>
+                </ul>
             </div>
         </nav>
         <div className="jumbotron text-center">
@@ -38,6 +41,9 @@ const Initialized = (props) => (
                 </div>
                 <ul className="nav navbar-nav">
                     <li className="active"><a href="/api/diary">Pamiętnik</a></li>
+                </ul>
+                <ul className="nav navbar-nav">
+                    <li><a href="/api/form">Dodaj wspomnienie</a></li>
                 </ul>
             </div>
         </nav>

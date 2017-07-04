@@ -1,7 +1,8 @@
 module.exports = {
     entry: {
         facebook: './src/main/resources/static/js/facebook.js',
-        diary: './src/main/resources/static/js/diary.js'
+        diary: './src/main/resources/static/js/diary.js',
+        form: './src/main/resources/static/js/form.js'
         ,
     },
     output: {
