@@ -4,7 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +19,8 @@
     "fullcalendar": "^3.4.0",
     "schema-utils": "^0.3.0",
     "style-loader": "^0.18.0",
-    "webpack": "^2.5.1"
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
