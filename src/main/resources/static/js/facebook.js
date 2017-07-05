@@ -29,7 +29,10 @@ const LogoutComponent = (props) => (
         </nav>
     <div className="jumbotron text-center">
             <div>
-                <h1>{props.name}</h1>
+                <h1>Witaj!</h1>
+                <h3><b>{props.name}</b>, do twojej dyspozycji w naszej aplikacji są zakładki: </h3>
+                <h3><b>Pamętnik</b>, który wyświetla kalendarz z twoimi wspomnieniami</h3>
+                <h3><b>Dodaj wspomnienie</b>, które pozwala Ci na dodanie nowego wspomnienia ;)</h3>
                 <button onClick={props.logout} className="btn btn-default">Wyloguj się</button>
             </div>
     </div>

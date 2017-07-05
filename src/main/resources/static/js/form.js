@@ -1,7 +1,12 @@
+import 'rc-time-picker/assets/index.css';
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'url-search-params-polyfill';
+import DatePicker from 'react-bootstrap-date-picker'
+import TimePicker from 'rc-time-picker';
 
 const Content = (props) => (
     <div>
@@ -24,7 +29,9 @@ const Content = (props) => (
                 <h3>{props.day}</h3>
                 <h3>{props.startTime}</h3>
                 <h3>{props.endTime}</h3>
-                <h3>{props.content}</h3>
+                <DatePicker />
+                <TimePicker
+                />
             </div>
         </div>
     </div>
