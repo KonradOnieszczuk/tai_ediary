@@ -29,10 +29,14 @@ jar {
 	version =  '0.1.0'
 }
 
+bootRepackage {
+	mainClass = 'ediary.EdiaryApplication'
+}
+
 task buildDocker(type: Docker, dependsOn: build) {
 	push = true
 	applicationName = jar.baseName
-	dockerfile = file('src/main/docker/Dockerfile')
+	dockerfile = file('src/main/resources/docker/Dockerfile')
 	doFirst {
 		copy {
 			from jar
@@ -58,6 +62,9 @@ dependencies {
 	compile('com.h2database:h2')
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile("org.projectlombok:lombok:1.16.12")
+	compile("org.codehaus.jackson:jackson-mapper-asl:1.9.7")
+	compile("org.codehaus.jackson:jackson-core-asl:1.9.7")
+	//compile("org.postgresql:postgresql:9.4.1212")
 }
 
 task wrapper(type: Wrapper) {

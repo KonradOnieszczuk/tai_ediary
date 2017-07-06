@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,10 +28,9 @@ public class Loader implements ApplicationRunner {
     @Override
     @Transactional
     public void run(ApplicationArguments args) throws Exception {
-        long dailyPartId = 1L;
         long userId = 1376743902406200L;
         List<DiaryPart> diaryPartList = Arrays.asList(
-                new DiaryPart(dailyPartId, "niezwykly dzien", LocalDate.parse("2017-06-27"), LocalTime.parse("9:35", DateTimeFormatter.ofPattern("H:m")), LocalTime.parse("18:00", DateTimeFormatter.ofPattern("H:m")), "Something happened", userId)
+                new DiaryPart("niezwykly dzien", LocalDate.parse("2017-06-27"), LocalTime.parse("9:35", DateTimeFormatter.ofPattern("H:m")), LocalTime.parse("18:00", DateTimeFormatter.ofPattern("H:m")), "Something happened", userId)
         );
         diaryPartRepository.save(diaryPartList);
     }

@@ -6,7 +6,7 @@ module.exports = {
         ,
     },
     output: {
-        path: __dirname + '/src/main/webapp/webpack',
+        path: __dirname + '/src/main/resources/static/webpack',
         filename: "[name]-bundle.js"
     },
     module: {

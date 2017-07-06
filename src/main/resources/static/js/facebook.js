@@ -7,7 +7,7 @@ const LoginComponent = () => (
         <h1>E-pamiętnik</h1>
         <p>Zatrzymaj swoje wspomnienia;)</p>
         <form action="/signin/facebook" method="post">
-            <button type="submit" className="btn btn-default">Zaloguj się przez Facebook'a</button>
+            <button type="submit" className="btn btn-primary">Zaloguj się przez Facebook'a</button>
         </form>
     </div>
 );
@@ -32,8 +32,10 @@ const LogoutComponent = (props) => (
                 <h1>Witaj!</h1>
                 <h3><b>{props.name}</b>, do twojej dyspozycji w naszej aplikacji są zakładki: </h3>
                 <h3><b>Pamętnik</b>, który wyświetla kalendarz z twoimi wspomnieniami</h3>
-                <h3><b>Dodaj wspomnienie</b>, które pozwala Ci na dodanie nowego wspomnienia ;)</h3>
-                <button onClick={props.logout} className="btn btn-default">Wyloguj się</button>
+                <h3><b>Dodaj wspomnienie</b>, które pozwala Ci na dodanie nowego wspomnienia</h3>
+                <h3>Baw się dobrze!</h3>
+                <h3></h3>
+                <button onClick={props.logout} className="btn btn-primary">Wyloguj się</button>
             </div>
     </div>
     </div>

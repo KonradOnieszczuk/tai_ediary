@@ -14,9 +14,9 @@ import java.time.LocalTime;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class DiaryPart {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long diaryPartId;
 
     private String name;
@@ -34,4 +34,13 @@ public class DiaryPart {
     private String content;
 
     private Long userId;
+
+    public DiaryPart (String name, LocalDate day, LocalTime startTime, LocalTime endTime, String content, Long userId){
+        this.name = name;
+        this.day = day;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.content = content;
+        this.userId = userId;
+    }
 }
